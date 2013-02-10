@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Campusfit</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>          
+  <% if "#{params[:controller]}##{params[:action]}" == "piggybak/orders#submit" -%>
+      <%= javascript_include_tag "piggybak/piggybak-application" %>
+  <% end -%>
+
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <header>
+    <div class="container">
+
+      <div class="row">
+        <div class="six columns">
+          <img src="http://static.tumblr.com/pgl1q8w/0Tolquhvi/banner_1.png" style="width: 300px;" />
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="twelve columns">
+          <ul class="nav-bar">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">Articles</a></li>
+            <li><a href="#">Forum</a></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <%= yield %>
+</body>
+</html>

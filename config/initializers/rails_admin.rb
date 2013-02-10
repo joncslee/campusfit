@@ -14,6 +14,12 @@ RailsAdmin.config do |config|
   # RailsAdmin may need a way to know who the current user is]
   config.current_user_method { current_user } # auto-generated
 
+  # eventually, only let superusers log into the admin!
+  # RailsAdmin.authorize_with do 
+  #  redirect_to root_path unless current_user.try(:admin?) 
+  # end 
+  # assume you have 'admin' boolean in your 'user' model 
+
   # If you want to track changes on your models:
   # config.audit_with :history, 'User'
 
@@ -892,5 +898,6 @@ RailsAdmin.config do |config|
   #     # you can override a cross-section field configuration in any section with the same syntax `configure :field_name do ... end`
   #     # using `field` instead of `configure` will exclude all other fields and force the ordering
   # end
+  #
 
 end

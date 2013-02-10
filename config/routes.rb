@@ -1,7 +1,5 @@
 Campusfit::Application.routes.draw do
 
-  get "landing/index"
-
   mount Piggybak::Engine => '/checkout', :as => 'piggybak'
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 
@@ -58,7 +56,7 @@ Campusfit::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'articles#index'
+  root :to => 'landing#index'
 
   # See how all your routes lay out with "rake routes"
 

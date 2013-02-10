@@ -16,7 +16,16 @@
 
       <div class="row">
         <div class="six columns">
-          <img src="http://static.tumblr.com/pgl1q8w/0Tolquhvi/banner_1.png" style="width: 300px;" />
+          <a href="/"><img src="http://static.tumblr.com/pgl1q8w/0Tolquhvi/banner_1.png" style="width: 300px;" /></a>
+        </div>
+        <div class="six columns sign-in">
+          <% if user_signed_in? %>
+            <span>Welcome<% if current_user.first_name? %>, <%= current_user.first_name %><% end %>!</span><br />
+            <%= link_to 'Logout', destroy_user_session_path, :method => :delete, :class => "last" %>
+          <% else %>
+            <%= link_to "Sign in", new_session_path(:user) %><br />
+            <%= link_to "Create Account", new_registration_path(:user) %>
+          <% end %>
         </div>
       </div>
 
@@ -33,6 +42,10 @@
     </div>
   </header>
 
-  <%= yield %>
+  <div class="row">
+    <div class="twelve columns">
+      <%= yield %>
+    </div>
+  </div>
 </body>
 </html>

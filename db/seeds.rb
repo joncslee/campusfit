@@ -5,3 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+# Create single user with admin priveleges
+
+User.create(email: 'admin@campusfit.me', password: 'password', password_confirmation: 'password', admin: 1)

@@ -1,0 +1,32 @@
+#checkout {
+  .item {
+    @extend .row;
+    label {
+      @extend .four;
+      @extend .columns;
+      @extend .inline;
+    }
+    input[type="text"] {
+      @extend .eight;
+      height: 28px;
+      font-size: 15px;
+      &#piggybak_order_line_items_attributes_1_payment_attributes_verification_value {
+        width: 60px;
+      }
+    }
+    select {
+      @extend .four;
+      height: 28px;
+      font-size: 12px;
+      padding: 4px 0;
+      &#piggybak_order_line_items_attributes_1_payment_attributes_month, &#piggybak_order_line_items_attributes_1_payment_attributes_year {
+        width: 60px;
+      }
+    }
+  }
+
+  a#copy {
+    font-size: 12px;
+  }
+
+}

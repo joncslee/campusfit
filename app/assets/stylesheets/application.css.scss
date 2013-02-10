@@ -9,12 +9,21 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require foundation_and_overrides
- *= require_tree .
  */
+
+
+@import "foundation_and_overrides.scss";
+@import "landing.css.scss";
+@import "articles.css.scss";
+@import "checkout.css.scss";
 
 body { background-color: #ededed; }
 .container { padding: 0 20px; }
 .nav-bar { padding-bottom: 0; margin-bottom: 0; }
-header { margin-top: 20px; }
+header { 
+  margin-top: 20px; 
+  .sign-in {
+    text-align: right;
+  }
+}
 .jumbotron { margin-bottom: 30px; }

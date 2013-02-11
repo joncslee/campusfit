@@ -33,10 +33,10 @@
       <div class="row">
         <div class="twelve columns">
           <ul class="nav-bar">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="/articles">Articles</a></li>
-            <li><a href="/forum">Forum</a></li>
-            <li><a href="/store">Store</a></li>
+            <li <% if params[:controller] == 'landing' %>class="active"<% end %>><a href="/">Home</a></li>
+            <li <% if params[:controller] == 'articles' %>class="active"<% end %>><a href="/articles">Articles</a></li>
+            <li <% if params[:controller] == 'forum' %>class="active"<% end %>><a href="/forum">Forum</a></li>
+            <li <% if params[:controller] == 'products' %>class="active"<% end %>><a href="/store">Store</a></li>
           </ul>
         </div>
       </div>

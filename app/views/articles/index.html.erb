@@ -1,33 +1,13 @@
 <div class="container">
-  <div class="jumbotron">
-    <div class="row">
-      <div class="twelve columns">
-        <div id="slider">
-          <img src="http://static.tumblr.com/pgl1q8w/0Tolquhvi/banner_1.png" />
-          <img src="http://placehold.it/1000x300" />
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <script>
-    $(window).load(function() {
-      $("#slider").orbit();
-    });
-  </script>
 
   <div class="row featured_articles">
     <div class="eight columns">
       <div class="row">
-        <div class="four columns">
-          <img src="http://placehold.it/200" />
-        </div>
-        <div class="four columns">
-          <img src="http://placehold.it/200" />
-        </div>
-        <div class="four columns">
-          <img src="http://placehold.it/200" />
-        </div>
+        <table>
+          <% @articles.each do |a| %>
+            <tr><td><%= link_to a.title, a %></td></tr>
+          <% end %>
+        </table>
       </div>
       <p><a href="#">Hello this is a test</a></p>
     </div>

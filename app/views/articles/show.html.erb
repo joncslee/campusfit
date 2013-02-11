@@ -1,2 +1,14 @@
-<h1>Articles#show</h1>
-<p>Find me in app/views/articles/show.html.erb</p>
+<div id="article">
+  <div class="row">
+    <div class="seven columns">
+      <div class="content">
+        <h1><%= @article.title %></h1>
+        <%= @article.content.html_safe %>
+      </div>
+    </div>
+
+    <div class="five columns">
+      <img src="http://placehold.it/350x500" />
+    </div>
+  </div>
+</div>

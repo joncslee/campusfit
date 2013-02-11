@@ -25,13 +25,25 @@ task :campusfit => :environment do
 
     posts = json['response']['posts'].to_a
     posts.each do |post|
-      slug = post['slug']
       type = post['type']
+      tags = post['tags']
+      format = post['format']
 
-      if type == 'photo'
-        total_photo = total_photo + 1
-      elsif type == 'text'
+      if type == 'text'
         total_text = total_text + 1
+
+        title = post['title']
+        body = post['body']
+
+        Article.create(:title => title,
+                       :content => body,
+                       :article_type => type,
+                       :tags => tags,
+                       :format => format)
+
+      elsif type == 'photo'
+        total_photo = total_photo + 1
+
       elsif type == 'quote'
         total_quote = total_quote + 1
       elsif type == 'link'

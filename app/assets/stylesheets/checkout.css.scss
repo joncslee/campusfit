@@ -29,4 +29,10 @@
     font-size: 12px;
   }
 
+  #submit input {
+    @extend .round;
+    @extend .button;
+  }
+
 }
+

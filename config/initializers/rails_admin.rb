@@ -14,6 +14,15 @@ RailsAdmin.config do |config|
   # RailsAdmin may need a way to know who the current user is]
   config.current_user_method { current_user } # auto-generated
 
+
+  config.model Product do
+    edit do
+      #other fields
+      include_all_fields
+      # or field :piggybak_sellable
+    end
+  end	
+
   # eventually, only let superusers log into the admin!
   # RailsAdmin.authorize_with do 
   #  redirect_to root_path unless current_user.try(:admin?) 

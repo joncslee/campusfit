@@ -6,6 +6,9 @@ Campusfit::Application.routes.draw do
   devise_for :users
 
   resources :articles
+  resources :products
+
+  match "/store" => "products#index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

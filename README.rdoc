@@ -8,3 +8,10 @@
 5. install forem
 6. set up comments
 
+
+* only activemerchant_mode = test works... must work for production as well
+  - app knows it's production but piggybak remains set at test
+  - last resort hack - set both test and production keys to production values
+* remove 'description' from product model -- taken care of in sellable
+* choose a wysiwyg editor: https://github.com/sferik/rails_admin/wiki/Text
+

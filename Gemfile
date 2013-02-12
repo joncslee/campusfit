@@ -42,3 +42,5 @@ gem 'jquery-rails'
 # gem 'debugger'
 
 gem "piggybak"
+gem 'piggybak_stripe', :git => 'git://github.com/piggybak/piggybak_stripe.git'
+gem "ckeditor"

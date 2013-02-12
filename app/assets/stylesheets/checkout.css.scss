@@ -5,6 +5,9 @@
       @extend .four;
       @extend .columns;
       @extend .inline;
+      &.error {
+        @extend .eight;
+      }
     }
     input[type="text"] {
       @extend .eight;

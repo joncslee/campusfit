@@ -3,6 +3,7 @@
 <head>
   <title>Campusfit</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
+  <script type="text/javascript" src="https://js.stripe.com/v1/"></script>
   <%= javascript_include_tag "application" %>          
   <% if "#{params[:controller]}##{params[:action]}" == "piggybak/orders#submit" -%>
       <%= javascript_include_tag "piggybak/piggybak-application" %>
@@ -13,6 +14,8 @@
 <body>
   <header>
     <div class="container">
+
+      <%= Piggybak.config.activemerchant_mode %>
 
       <div class="row">
         <div class="six columns">
@@ -30,13 +33,15 @@
         </div>
       </div>
 
+      <%= params[:controller] %>
+
       <div class="row">
         <div class="twelve columns">
           <ul class="nav-bar">
             <li <% if params[:controller] == 'landing' %>class="active"<% end %>><a href="/">Home</a></li>
             <li <% if params[:controller] == 'articles' %>class="active"<% end %>><a href="/articles">Articles</a></li>
             <li <% if params[:controller] == 'forum' %>class="active"<% end %>><a href="/forum">Forum</a></li>
-            <li <% if params[:controller] == 'products' %>class="active"<% end %>><a href="/store">Store</a></li>
+            <li <% if params[:controller] == 'products' || params[:controller] =~ /piggybak/ %>class="active"<% end %>><a href="/store">Store</a></li>
           </ul>
         </div>
       </div>
@@ -45,9 +50,7 @@
   </header>
 
   <div class="row">
-    <div class="twelve columns">
       <%= yield %>
-    </div>
   </div>
 </body>
 </html>

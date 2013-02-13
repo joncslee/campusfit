@@ -15,3 +15,4 @@
 * choose a wysiwyg editor: https://github.com/sferik/rails_admin/wiki/Text
 * add fb and twitter logos somewhere
 * migrate newsletter form
+* when importing, use tumblr timestamps to date articles (not rails created_at dates) to preserve the order of creation

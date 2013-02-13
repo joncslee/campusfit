@@ -13,44 +13,56 @@
 </head>
 <body>
   <header>
-    <div class="container">
-
-      <%= Piggybak.config.activemerchant_mode %>
-
-      <div class="row">
-        <div class="six columns">
-          <a href="/"><img src="http://static.tumblr.com/pgl1q8w/0Tolquhvi/banner_1.png" style="width: 300px;" /></a>
-        </div>
-        <div class="six columns sign-in">
-          <% if user_signed_in? %>
-            <span>Welcome<% if current_user.first_name? %>, <%= current_user.first_name %><% end %>!</span>
-            <%= link_to 'Logout', destroy_user_session_path, :method => :delete, :class => "last" %><br />
-            <%= cart_link %>
-          <% else %>
-            <%= link_to "Sign in", new_session_path(:user) %><br />
-            <%= link_to "Create Account", new_registration_path(:user) %>
-          <% end %>
+      <div id="top-bar">
+        <div class="row">
+            <ul class="inline-list">
+              <% if user_signed_in? %>
+                <li><span>Welcome<% if current_user.first_name? %>, <%= current_user.first_name %><% end %>!</span></li>
+                <li><%= link_to 'Logout', destroy_user_session_path, :method => :delete, :class => "last" %></li>
+                <li><%= cart_link %></li>
+              <% else %>
+                <li><%= link_to "Sign in", new_session_path(:user) %></li>
+                <li><%= link_to "Create Account", new_registration_path(:user) %></li>
+              <% end %>
+            </ul>
         </div>
       </div>
 
-      <%= params[:controller] %>
 
       <div class="row">
-        <div class="twelve columns">
-          <ul class="nav-bar">
-            <li <% if params[:controller] == 'landing' %>class="active"<% end %>><a href="/">Home</a></li>
-            <li <% if params[:controller] == 'articles' %>class="active"<% end %>><a href="/articles">Articles</a></li>
-            <li <% if params[:controller] == 'forum' %>class="active"<% end %>><a href="/forum">Forum</a></li>
-            <li <% if params[:controller] == 'products' || params[:controller] =~ /piggybak/ %>class="active"<% end %>><a href="/store">Store</a></li>
+        <div class="twelve columns" style="text-align: center;">
+          <a href="/"><%= image_tag 'logo.png', :class => "logo" %></a>
+        </div>
+      </div>
+
+
+      <div class="row">
+        <div class="eight columns centered">
+          <ul class="tabs nav five-up">
+            <li <% if params[:controller] == 'landing' %>class="active"<% end %>><a href="/">HOME</a></li>
+            <li <% if params[:controller] == 'articles' %>class="active"<% end %>><a href="/articles">ARTICLES</a></li>
+            <li <% if params[:controller] == 'forum' %>class="active"<% end %>><a href="/forum">FORUM</a></li>
+            <li <% if params[:controller] == 'forum' %>class="active"<% end %>><a href="/world">WORLDFEED</a></li>
+            <li <% if params[:controller] == 'products' || params[:controller] =~ /piggybak/ %>class="active"<% end %>><a href="/store">STORE</a></li>
           </ul>
         </div>
       </div>
 
-    </div>
   </header>
 
-  <div class="row">
-      <%= yield %>
+  <div class="container">
+    <%= yield %>
   </div>
+
+  <footer>
+    <div class="row">
+      <div class="six columns centered" style="text-align: center;">
+        <p>Here is all my awesome footer stuff!</p>
+        <p>ActiveMerchant mode: <%= Piggybak.config.activemerchant_mode %><br />
+        Current Controller: <%= params[:controller] %><br />
+        Current Action: <%= params[:action] %></p>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>

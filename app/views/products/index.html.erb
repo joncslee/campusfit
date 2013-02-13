@@ -1,6 +1,9 @@
-<ul>
-<% @products.each do |product| %>
-  <%= product.name %>: <%= link_to product.name, product %>
+<div class="row">
+  <div class="six columns centered">
+    <img src="http://placehold.it/500x500" />
+    <%= @product.name %>: <%= link_to @product.name, @product %>
+  </div>
 
-<% end %>
+
 </ul>
+</div>

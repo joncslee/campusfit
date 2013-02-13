@@ -6,6 +6,9 @@
   h1 {
     font-size: 36px;
     margin-bottom: 20px;
+    margin-top: 5px;
+    padding-bottom: 15px;
+    border-bottom: lighten($light-grey, 20%) 1px solid;
   }
   .content img { 
     padding: 5px;
@@ -16,5 +19,7 @@
   ul.breadcrumbs {
     background: none;
     margin-bottom: 0;
+    padding: 0;
+    border: none;
   }
 }

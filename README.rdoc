@@ -6,7 +6,6 @@
 3. set up multiple photo attachments for photo posts.. ?
 4. install cancan for permissions
 5. install forem
-6. set up comments
 
 
 * only activemerchant_mode = test works... must work for production as well
@@ -14,4 +13,5 @@
   - last resort hack - set both test and production keys to production values
 * remove 'description' from product model -- taken care of in sellable
 * choose a wysiwyg editor: https://github.com/sferik/rails_admin/wiki/Text
-
+* add fb and twitter logos somewhere
+* migrate newsletter form

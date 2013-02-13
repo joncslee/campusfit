@@ -11,22 +11,71 @@
  *= require_self
  */
 
+$light-grey: #999;
+$cf-red: #B61A11;
 
 @import "foundation_and_overrides.scss";
 @import "landing.css.scss";
 @import "articles.css.scss";
 @import "checkout.css.scss";
 
+a {
+  color: #2390b1;
+}
+
+ul {
+  margin-left: 20px;
+}
+
 body { background-color: #fff; }
-.container { padding: 0 20px;}
-.nav-bar { padding-bottom: 0; margin-bottom: 0; }
+.container { padding: 20px 20px 0;}
 header { 
   .sign-in {
     text-align: right;
   }
-  .container {
-    background-color: darken(red, 20%);
-    padding-top: 20px;
+  #top-bar {
+    padding: 10px;
+    color: #999;
+    border-bottom: lighten($light-grey, 20%) solid 1px;
+    margin-bottom: 20px;
+    ul {
+      margin-bottom: 0;
+      float: right;
+      a {
+        color: $light-grey;
+      }
+    }
   }
+  img.logo {
+    width: 400px;
+  }
+
+
+  ul.nav {
+    border: none;
+    margin-top: 5px;
+    margin-bottom: 0;
+    a {
+      color: $light-grey;
+      &:hover {
+        color: $cf-red;
+      }
+    }
+    li.active {
+      border: none;
+      margin-top: 0;
+      a {
+        border: none;
+        color: $cf-red;
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+footer {
+  border-top: lighten($light-grey, 20%) solid 1px;
+  margin-top: 50px;
+  padding: 40px 0;
 }
 .jumbotron { margin-bottom: 30px; }

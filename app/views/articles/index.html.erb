@@ -1,20 +1,12 @@
-<div class="container">
-
-  <div class="row featured_articles">
-    <div class="eight columns">
-      <div class="row">
-        <table>
-          <% @articles.each do |a| %>
-            <tr><td><%= link_to a.title, a %></td></tr>
-          <% end %>
-        </table>
-      </div>
-      <p><a href="#">Hello this is a test</a></p>
-    </div>
-    <div class="four columns">
-      <img src="http://placehold.it/350x500" />
-    </div>
+<div class="row featured_articles">
+  <div class="eight columns">
+    <table>
+      <% @articles.each do |a| %>
+        <tr><td><%= link_to a.title, a %></td></tr>
+      <% end %>
+    </table>
   </div>
-
+  <div class="four columns">
+    <img src="http://placehold.it/350x500" />
+  </div>
 </div>
-

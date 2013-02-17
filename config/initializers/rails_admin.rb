@@ -23,6 +23,7 @@ RailsAdmin.config do |config|
     end
   end	
 
+
   # eventually, only let superusers log into the admin!
   # RailsAdmin.authorize_with do 
   #  redirect_to root_path unless current_user.try(:admin?) 
@@ -71,6 +72,20 @@ RailsAdmin.config do |config|
 
   config.model 'Article' do
 
+    edit do
+      field :title, :string
+      field :content, :text do
+        ckeditor true
+      end
+    end
+
+    create do
+      field :title, :string
+      field :content, :text do
+        ckeditor true
+      end
+    end
+    
   #   # You can copy this to a 'rails_admin do ... end' block inside your article.rb model definition
 
   #   # Found associations:

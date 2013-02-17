@@ -8,6 +8,7 @@ gem 'rails', '3.2.11'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 group :production do
   gem 'pg'
+  gem 'thin'
 end
 group :development, :test do
   gem 'mysql2'
@@ -45,6 +46,9 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'debugger'
 
-gem "piggybak"
+gem 'piggybak'
 gem 'piggybak_stripe', :git => 'git://github.com/piggybak/piggybak_stripe.git'
-gem "ckeditor"
+gem 'ckeditor'
+gem 'rmagick'
+gem 'carrierwave'
+gem 'nokogiri'

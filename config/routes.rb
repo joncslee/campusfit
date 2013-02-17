@@ -1,5 +1,7 @@
 Campusfit::Application.routes.draw do
 
+  mount Ckeditor::Engine => '/ckeditor'
+
   mount Piggybak::Engine => '/checkout', :as => 'piggybak'
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 

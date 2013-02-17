@@ -14,6 +14,5 @@
 //= require jquery_ujs
 //= require foundation
 //= require piggybak_stripe
-//= require articles
-//= require landing
-//= require products
+//= require ckeditor/init
+//= require_tree .

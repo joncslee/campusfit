@@ -3,11 +3,21 @@
     <table>
       <% @articles.each do |a| %>
         <tr>
-          <td><%= image_tag a.image_url(:thumb) %></td>
-          <td><%= link_to a.title, a %></td>
+          <td>
+            <% if a.image.url %>
+              <%= image_tag(a.image.url(:thumb)) if a.image.url %>
+            <% else %>
+              <img src="http://placehold.it/150x120" />
+            <% end %>
+          </td>
+          <td>
+            <%= link_to a.title, a %><br />
+            <p><%= raw strip_tags(a.content).truncate(250) %></p>
+          </td>
         </tr>
       <% end %>
     </table>
+    <%= paginate @articles %>
   </div>
   <div class="four columns">
     <img src="http://placehold.it/350x500" />

@@ -17,15 +17,19 @@
 <div class="row featured_articles">
   <div class="eight columns">
     <div class="row">
-      <div class="four columns">
-        <img src="http://placehold.it/200" />
-      </div>
-      <div class="four columns">
-        <img src="http://placehold.it/200" />
-      </div>
-      <div class="four columns">
-        <img src="http://placehold.it/200" />
-      </div>
+      <% @articles.each do |a| %>
+        <div class="four columns">
+          <%= link_to a, :class => 'th' do %>
+            <% if a.image.url %>
+              <%= image_tag(a.image.url(:square_feature)) if a.image.url %>
+            <% else %>
+              <img src="http://placehold.it/200x200" />
+            <% end %>
+          <% end %>
+          <p><%= link_to a.title, a %></p>
+          <p><%= raw strip_tags(a.content).truncate(100) %></p>
+        </div>
+      <% end %>
     </div>
   </div>
   <div class="four columns">

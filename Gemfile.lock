@@ -222,6 +222,7 @@ DEPENDENCIES
   compass-rails
   devise
   jquery-rails
+  kaminari
   mysql2
   nokogiri
   pg

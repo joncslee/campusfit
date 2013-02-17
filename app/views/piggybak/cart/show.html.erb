@@ -1,11 +1,13 @@
-<div id="cart">
+<div id="cart" class="row">
+  <div class="eight columns centered">
 
-<h1>Shopping Cart</h1>
-<% if @cart.errors.any? -%>
-<div id="cart_error">
-<%= raw @cart.errors.join('<br />') %>
-</div>
-<% end -%>
+    <h1>Shopping Cart</h1>
+    <% if @cart.errors.any? -%>
+    <div id="cart_error">
+    <%= raw @cart.errors.join('<br />') %>
+    </div>
+    <% end -%>
 
-<%= render "items", :page => "cart" %>
+    <%= render "items", :page => "cart" %>
+  </div>
 </div>

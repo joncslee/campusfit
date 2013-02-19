@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 gem 'devise'
 gem 'rails_admin'
 
@@ -7,10 +7,13 @@ gem 'rails', '3.2.11'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 group :production do
+  gem 'pg'
   gem 'thin'
 end
+group :development, :test do
+  gem 'mysql2'
+end
 
-gem 'mysql2'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -51,4 +54,3 @@ gem 'carrierwave'
 gem 'nokogiri'
 gem 'kaminari'
 gem 'cancan'
-

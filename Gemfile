@@ -55,3 +55,6 @@ gem 'carrierwave'
 gem 'nokogiri'
 gem 'kaminari'
 gem 'cancan'
+
+gem "fog", "~> 1.3.1"
+

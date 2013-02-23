@@ -18,6 +18,8 @@
 * when importing, use tumblr timestamps to date articles (not rails created_at dates) to preserve the order of creation
 
 ** taps to push db to heroku rocks. **
+heroku db:push
+heroku db:pull
 
 
 == Stripe Payment
